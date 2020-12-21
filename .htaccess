@@ -1,0 +1,16 @@
+Options -Indexes
+
+#Protect Directory
+AuthName "Login"
+AuthType Basic
+AuthUserFile /var/www/html/piroliro.com/.htpasswd
+Require valid-user
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !\.(css|js|icon|zip|rar|png|jpg|gif|pdf)$ index.php [L]
+
+
+
